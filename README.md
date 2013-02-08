@@ -37,27 +37,38 @@ An example of a navbar_tabs JSON object describing 3 main tabs:
 
 To include subtabs simply create a main tab name key with a value of a hash describing each of the sub tabs. Note you can only do one level of subtabs. 
 An example of a navbar_tabs JSON object describing 3 main tabs and 2 subtabs:
-	{ 
-		"Login" => login_path,
-		"Tasks" => tasks_path,
-		"Project" => {
-						"Open Projects" => projects_open_path,
-				        "Closed Projects" => projects_closed_path
-				     }
-	}
-
+<pre>
+{ 
+	"Login" => login_path,
+	"Tasks" => tasks_path,
+	"Project" => {
+					"Open Projects" => projects_open_path,
+			        "Closed Projects" => projects_closed_path
+			     }
+}
+</pre>
 To create a responsive collapsible navbar:
-	<%= create_collapsible_navbar(@current_page, @navbar_tabs) %>
+<pre>
+<%= create_collapsible_navbar(@current_page, @navbar_tabs) %>
+</pre>
 
 The creation method takes an optional hash for styling and exending the navbar
 Add a brand to the navbar:
-	<%= create_navbar(@current_page, @navbar_tabs, brand: "Website Title") %>
+<pre>
+<%= create_navbar(@current_page, @navbar_tabs, brand: "Website Title") %>
+</pre>
 Add a link for when the brand is clicked:
-	<%= create_navbar(@current_page, @navbar_tabs, brand: "Website Title", brand_path: '/projects') %>
+<pre>
+<%= create_navbar(@current_page, @navbar_tabs, brand: "Website Title", brand_path: '/projects') %>
+</pre>
 Change the Navbar class (Check out http://twitter.github.com/bootstrap/components.html#navbar for different classes):
-	<%= create_navbar(@current_page, @navbar_tabs, navbar_class: 'navbar navbar-inverse') %>
+<pre>
+<%= create_navbar(@current_page, @navbar_tabs, navbar_class: 'navbar navbar-inverse') %>
+</pre>
 Add raw html inside the non collapsible nav bar area:
-	<%= create_navbar(@current_page, @navbar_tabs, navbar_raw_html: @navbar_raw_html) %>
+<pre>	
+<%= create_navbar(@current_page, @navbar_tabs, navbar_raw_html: @navbar_raw_html) %>
+</pre>
 
 ## Contributing
 
