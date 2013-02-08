@@ -20,7 +20,7 @@ Or install it yourself as:
     $ gem install rails_bootstrap_easy_navbar
 
 ## Usage
-With RailsBootstrapNavbarHelper you can create a navbar with one method call containing your current page name and a JSON object. 
+With RailsBootstrapEasyNavbar you can create a bootstrap styled navbar with one method call containing your current page name and a JSON object. 
 
 From within a view create a navbar with:
 	<%= create_navbar(@current_page, @navbar_tabs) %>
@@ -45,6 +45,19 @@ An example of a navbar_tabs JSON object describing 3 main tabs and 2 subtabs:
 				        "Closed Projects" => projects_closed_path
 				     }
 	}
+
+To create a responsive collapsible navbar:
+	<%= create_collapsible_navbar(@current_page, @navbar_tabs) %>
+
+The creation method takes an optional hash for styling and exending the navbar
+Add a brand to the navbar:
+	<%= create_navbar(@current_page, @navbar_tabs, brand: "Website Title") %>
+Add a link for when the brand is clicked:
+	<%= create_navbar(@current_page, @navbar_tabs, brand: "Website Title", brand_path: '/projects') %>
+Change the Navbar class (Check out http://twitter.github.com/bootstrap/components.html#navbar for different classes):
+	<%= create_navbar(@current_page, @navbar_tabs, navbar_class: 'navbar navbar-inverse') %>
+Add raw html inside the non collapsible nav bar area:
+	<%= create_navbar(@current_page, @navbar_tabs, navbar_raw_html: @navbar_raw_html) %>
 
 ## Contributing
 

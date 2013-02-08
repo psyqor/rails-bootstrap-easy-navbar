@@ -3,12 +3,12 @@ module RailsBootstrapEasyNavbar
 		DEFAULT_NAVBAR_CLASS = 'navbar'
 		DEFAULT_BRAND_PATH = "/"
 
-		def create_nav(current_tab, nav_items, options={})
+		def create_navbar(current_tab, nav_items, options={})
 			options[:navbar_class] ||= DEFAULT_NAVBAR_CLASS
 			content_tag(:div, navbar_inner(current_tab, nav_items, options), class: options[:navbar_class])
 		end
 
-		def create_collapsible_nav(current_tab, nav_items, options={})
+		def create_collapsible_navbar(current_tab, nav_items, options={})
 			options[:navbar_class] ||= DEFAULT_NAVBAR_CLASS
 			options[:navbar_collapsible] = true
 			content_tag(:div, navbar_inner(current_tab, nav_items, options), class: options[:navbar_class])
