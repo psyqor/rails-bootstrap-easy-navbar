@@ -24,13 +24,14 @@ With RailsBootstrapEasyNavbar you can create a bootstrap styled navbar with one 
 
 From within a view create a navbar with:
 <pre>
-	create_navbar(@current_page, @navbar_tabs)
+create_navbar(@current_page, @navbar_tabs)
 </pre>
 The current page variable is the title of the current tab in string format
 
 The navbar_tabs JSON object is a hash of name, path pairs. 
-<pre>
+
 An example of a navbar_tabs JSON object describing 3 main tabs:
+<pre>
 	{ 
 		"Login" => login_path,
 		"Tasks" => tasks_path,
@@ -53,17 +54,17 @@ To create a responsive collapsible navbar:
 <pre>
 create_collapsible_navbar(@current_page, @navbar_tabs)
 </pre>
-
 The creation method takes an optional hash for styling and exending the navbar
-Add a brand to the navbar:
+
+Add a brand to the navbar with:
 <pre>
 create_navbar(@current_page, @navbar_tabs, brand: "Website Title")
 </pre>
-Add a link for when the brand is clicked:
+Add a link for when the brand is clicked with:
 <pre>
 create_navbar(@current_page, @navbar_tabs, brand: "Website Title", brand_path: '/projects')
 </pre>
-Change the Navbar class (Check out http://twitter.github.com/bootstrap/components.html#navbar for different classes):
+Change the Navbar class (Check out http://twitter.github.com/bootstrap/components.html#navbar for different classes) :
 <pre>
 create_navbar(@current_page, @navbar_tabs, navbar_class: 'navbar navbar-inverse')
 </pre>
