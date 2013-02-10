@@ -15,8 +15,8 @@ module RailsBootstrapEasyNavbar
 		end
 
 		private
-	    # Creates the navbar wrapper optionally containing a brand on the left hand side
-	    def navbar_inner(current_tab, nav_items, options={})
+	  # Creates the navbar wrapper optionally containing a brand on the left hand side
+	  def navbar_inner(current_tab, nav_items, options={})
 	      #create responsive collapsible layout if requested
 	      contents = [
 	      	content_tag(:a, (content_tag(:span, nil, class: "icon-bar")*3).html_safe, class: "btn btn-navbar", 'data-toggle' => "collapse", 'data-target' => '.nav-collapse'),
@@ -41,11 +41,9 @@ module RailsBootstrapEasyNavbar
 		    # Creates HTML for a list of clickable tabs 
 		def tabs(current_tab, nav_items)
 	    	nav_items.map do |tab_name, path|
-	          # A Hash here means the tab is made up of multiple links -> dropdown 
-		        if path.is_a? Hash
+		        if path.is_a? Hash # A Hash here means the tab is made up of multiple links -> dropdown 
 		          	content_tag(:li, drop_down_tab(tab_name, path), class: "dropdown")
-		          # construct and add a link to the list of tabs
-		      	else
+		      	else # construct and add a link to the list of tabs
 			      	args = [:li, (link_to tab_name, path)]
 			      	args << {class: "active"} if tab_name == current_tab
 			      	content_tag(*args)
