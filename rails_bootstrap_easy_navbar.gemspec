@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = RailsBootstrapEasyNavbar::VERSION
   gem.authors       = ["Mitchell Lane"]
   gem.email         = ["Mitchell.Lane52@gmail.com"]
-  gem.description   = %q{A helper class for creating a simple navigation bar with twitter-bootstrap styling from a given JSON object. Navigation bar may only be a maximum of two levels}
-  gem.summary       = %q{A helper class for creating a simple navigation bar with twitter-bootstrap styling from a given JSON object}
+  gem.description   = %q{With RailsBootstrapEasyNavbar you can create a simple navigation bar with twitter-bootstrap styling from a given JSON object. The navigation bar may only be a maximum of two levels.}
+  gem.summary       = %q{With RailsBootstrapEasyNavbar you can create a simple navigation bar with twitter-bootstrap styling in only minutes.}
   gem.homepage      = ""
   gem.license       = "MIT"
 
