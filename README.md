@@ -1,9 +1,10 @@
-# RailsBootstrapNavbarHelper
+# RailsBootstrapEasyNavbar 
 
-RailsBootstrapNavbarHelper is a Ruby on Rails gem for creating a simple navigation bar with twitter-bootstrap styling. Navigation bar may only be a maximum of two levels.
+RailsBootstrapEasyNavbar is a Ruby on Rails gem for creating a simple navigation bar with twitter-bootstrap styling. It suits rapid prototyping as it can be setup within minutes.
 
-Make sure you have the twitter bootstrap rails gem installed: gem 'twitter-bootstrap-rails'
+Make sure you have the twitter bootstrap stylesheets and javascript files installed. They can be installed in anyway. Either via gems or raw stylesheets and javascript files. For easy installation check out these gems: 'bootstrap-sass' & 'twitter-bootstrap-rails'
 
+The navigation bar may only be a maximum of two levels.
 
 ## Installation
 
@@ -30,16 +31,17 @@ The current page variable is the title of the current tab in string format
 
 The navbar_tabs JSON object is a hash of name, path pairs. 
 
-An example of a navbar_tabs JSON object describing 3 main tabs:
+An example of a JSON object describing 3 main tabs:
 <pre>
-	{ 
-		"Login" => login_path,
-		"Tasks" => tasks_path,
-		"Project" => projects_path
-	}
+{ 
+	"Login" => login_path,
+	"Tasks" => tasks_path,
+	"Project" => projects_path
+}
 </pre>
-To include subtabs simply create a main tab name key with a value of a hash describing each of the sub tabs. Only do one level of subtabs is supported. 
-An example of a navbar_tabs JSON object describing 3 main tabs and 2 subtabs:
+To include subtabs simply create a key named after the main tab with a value of a hash describing each of the sub tabs. Only one level of subtabs is supported. 
+
+Here is an example of a JSON object describing 3 main tabs and 2 subtabs:
 <pre>
 { 
 	"Login" => login_path,
@@ -50,11 +52,12 @@ An example of a navbar_tabs JSON object describing 3 main tabs and 2 subtabs:
 			     }
 }
 </pre>
-To create a responsive collapsible navbar:
+You can create a responsive collapsible navbar with:
 <pre>
 create_collapsible_navbar(@current_page, @navbar_tabs)
 </pre>
-The creation method takes an optional hash for styling and exending the navbar
+## Extension & Styling
+The creation methods take an optional hash for styling and exending the navbar.
 
 Add a brand to the navbar with:
 <pre>
@@ -69,7 +72,7 @@ Change the Navbar class (Check out http://twitter.github.com/bootstrap/component
 create_navbar(@current_page, @navbar_tabs, navbar_class: 'navbar navbar-inverse')
 </pre>
 Add raw html inside the non collapsible nav bar area:
-<pre>	
+<pre>
 create_navbar(@current_page, @navbar_tabs, navbar_raw_html: @navbar_raw_html)
 </pre>
 
