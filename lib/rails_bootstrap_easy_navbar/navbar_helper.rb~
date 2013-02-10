@@ -63,6 +63,7 @@ module RailsBootstrapEasyNavbar
 			].join("").html_safe
 		end
 
+
 		def drop_down_links(items)
 			items.map do |tab_name, path| 
 				content_tag(:li, (link_to tab_name, path))
