@@ -39,7 +39,7 @@ module RailsBootstrapEasyNavbar
 		    content_tag(:div, content_tag(:div, contents.join('').html_safe, class: 'container-fluid'), class: 'navbar-inner')
 		end
 
-		    # Creates HTML for a list of clickable tabs 
+		# Creates HTML for a list of clickable tabs 
 		def tabs(current_tab, nav_items)
         	nav_items.map do |tab_name, path|
 	            if path.is_a? Hash # A Hash here means the tab is made up of multiple links -> dropdown 
@@ -56,6 +56,7 @@ module RailsBootstrapEasyNavbar
 			content_tag(:li, nil, class: "divider-vertical")
 		end
 
+		# Creates HTML for a dropdown list of clickable items 
 		def drop_down_tab(title, items)
 			[content_tag(:a, dropdown_title(title), href: "#", class: "dropdown-toggle", 'data-toggle' => "dropdown"),
 				content_tag(:ul, drop_down_links(items), class: "dropdown-menu")
