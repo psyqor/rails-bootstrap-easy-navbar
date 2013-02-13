@@ -18,14 +18,16 @@ module RailsBootstrapEasyNavbar
     
         # Creates the navbar wrapper optionally containing a brand on the left hand side
         def navbar_inner(current_tab, nav_items, options={})
-            #create responsive collapsible layout if requested
-            contents = [
-            content_tag(:a, (content_tag(:span, nil, class: "icon-bar")*3).html_safe, class: "btn btn-navbar", 'data-toggle' => "collapse", 'data-target' => '.nav-collapse'),
-            content_tag(:div, content_tag(:ul, tabs(current_tab, nav_items), id: "tabs", class: "nav"), id: "navbar", class: 'nav-collapse collapse')
-            ] if options[:navbar_collapsible]
+        	unless nav_items.blank?
+	            #create responsive collapsible layout if requested
+	            contents = [
+	            content_tag(:a, (content_tag(:span, nil, class: "icon-bar")*3).html_safe, class: "btn btn-navbar", 'data-toggle' => "collapse", 'data-target' => '.nav-collapse'),
+	            content_tag(:div, content_tag(:ul, tabs(current_tab, nav_items), id: "tabs", class: "nav"), id: "navbar", class: 'nav-collapse collapse')
+	            ] if options[:navbar_collapsible]
 
-            # skip responsive layout and create tabs if not requested
-            contents = [content_tag(:ul, tabs(current_tab, nav_items), id: "tabs", class: "nav")] if !options[:navbar_collapsible]
+	            # skip responsive layout and create tabs if not requested
+	            contents = [content_tag(:ul, tabs(current_tab, nav_items), id: "tabs", class: "nav")] if !options[:navbar_collapsible]
+       		end
 
             #create brand
             if options[:brand]
