@@ -18,6 +18,7 @@ module RailsBootstrapEasyNavbar
     
         # Creates the navbar wrapper optionally containing a brand on the left hand side
         def navbar_inner(current_tab, nav_items, options={})
+        	contents = []
         	unless nav_items.blank?
 	            #create responsive collapsible layout if requested
 	            contents = [
@@ -31,8 +32,8 @@ module RailsBootstrapEasyNavbar
 
             #create brand
             if options[:brand]
-            options[:brand_path] ||= DEFAULT_BRAND_PATH
-            contents.insert(0, (content_tag(:a, options[:brand], href: options[:brand_path], class: "brand")))
+	            options[:brand_path] ||= DEFAULT_BRAND_PATH
+	            contents.insert(0, (content_tag(:a, options[:brand], href: options[:brand_path], class: "brand")))
             end
 
             #inject raw html if requested
